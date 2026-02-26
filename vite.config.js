@@ -12,7 +12,7 @@ export default defineConfig({
       manifest: {
         name: 'JetJot',
         short_name: 'JetJot',
-        description: 'Sprint-based todo board — your plans, your pace.',
+        description: 'Sprint-based todo board — your plans, your pace. Built by itarungm.',
         theme_color: '#6366f1',
         background_color: '#ffffff',
         display: 'standalone',
