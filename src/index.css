@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { @apply box-border; }
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  html.dark body {
+    @apply bg-gray-950 text-gray-100;
+  }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-gray-300 rounded-full; }
+  html.dark ::-webkit-scrollbar-thumb { @apply bg-gray-600; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-gray-400; }
+}
+
+@layer components {
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200 bg-white
+           text-gray-900 placeholder-gray-400 text-sm font-medium
+           focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent
+           transition-all duration-200;
+  }
+  html.dark .input-field {
+    @apply bg-gray-800 border-gray-600 text-gray-100 placeholder-gray-500;
+  }
+  .btn-primary {
+    @apply w-full py-3 px-6 rounded-xl bg-brand-500 hover:bg-brand-600
+           text-white font-semibold text-sm tracking-wide
+           transition-all duration-200 active:scale-[0.98]
+           disabled:opacity-60 disabled:cursor-not-allowed shadow-sm hover:shadow-md;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-card border border-gray-100;
+  }
+  html.dark .card {
+    @apply bg-gray-800 border-gray-700;
+  }
+}
+
+/* react-date-range overrides */
+.rdrCalendarWrapper {
+  font-family: 'Inter', system-ui, sans-serif !important;
+  border-radius: 1rem !important;
+  overflow: hidden;
+}
+.rdrDefinedRangesWrapper { display: none !important; }
+.rdrSelected, .rdrInRange, .rdrStartEdge, .rdrEndEdge {
+  background: #6366f1 !important;
+  color: white !important;
+}
+.rdrDay:not(.rdrDayPassive) .rdrInRange ~ .rdrDayNumber span,
+.rdrDay:not(.rdrDayPassive) .rdrStartEdge ~ .rdrDayNumber span,
+.rdrDay:not(.rdrDayPassive) .rdrEndEdge ~ .rdrDayNumber span,
+.rdrDay:not(.rdrDayPassive) .rdrSelected ~ .rdrDayNumber span {
+  color: white !important;
+}
+.rdrDateDisplayItem input { color: #4338ca !important; font-weight: 600 !important; }
+.rdrMonthAndYearPickers select { font-family: 'Inter', sans-serif !important; }
+
